@@ -16,6 +16,16 @@ app.get("/myip", (req, res) => {
     res.send("<h2>It's Working!</h2>"+ip+MyKey); 
 }); 
 
+app.get("/autonum/:id", (req, res) => { 
+    let abc=generateRandomIntegerInRange(0,req.params.id) 
+    console.log(req.params.id)
+    res.send("<h2>It's Working!</h2>"+abc); 
+}); 
+
+
+function generateRandomIntegerInRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 app.listen(PORT, () => { 
     console.log(`API is listening on port ${PORT}`); 
 });
