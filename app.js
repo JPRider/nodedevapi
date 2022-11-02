@@ -3,7 +3,7 @@ const requestIP = require('request-ip');
 
 const app = express(); 
 const PORT = process.env.PORT || 3000; 
-app.set('trust proxy', true);
+
 // For testing purposes 
 app.get("/", (req, res) => { 
     res.send("<h2>It's Working!</h2>"); 
