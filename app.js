@@ -9,8 +9,9 @@ app.get("/", (req, res) => {
 }); 
 
 app.get("/myip", (req, res) => { 
-    console.log(req.ip)
-    res.send("<h2>It's Working!</h2>"+req.ip); 
+    console.log(req.ip);
+    let ip = req.header('x-forwarded-for');
+    res.send("<h2>It's Working!</h2>"+ip); 
 }); 
 
 app.listen(PORT, () => { 
